@@ -59,3 +59,81 @@ if (in_array('basketball', $sports)) {
 }
 
 // Exo 8
+
+$tableau1 = ["a", "b"];
+$tableau2 = ["c", "d"];
+
+$result = array_merge($tableau1, $tableau2);
+print_r($result);
+
+
+// Exo 9
+$capitales = ["France" => "Paris", "Espagne" => "Madrid"];
+$pays = array_keys($capitales);
+print_r($pays);
+
+// Exo 10
+$nombres_2 = [1, 2, 3, 4, 5, 6];
+
+function odd($var)
+{
+    // retourne si l'entier en entrée est impair
+    return $var & 1;
+}
+
+function even($var)
+{
+    // retourne si l'entier en entrée est pair
+    return !($var & 1);
+}
+
+print_r(array_filter($nombres_2, "odd"));
+print_r(array_filter($nombres_2, "even"));
+
+
+// Exo 11 
+$fruits_2 = ["banane", "orange"];
+array_unshift($fruits_2, "ananas");
+var_dump($fruits_2);
+
+// Exo 12
+$personne_1 = [
+    "nom" => "Abo_Yazan",
+    "age" => 25,
+    "pays" => "Syrie"
+];
+
+$personne_2 = [
+    "nom" => "Al_Baze",
+    "age" => 30,
+    "pays" => "Syrie"
+];
+
+$result_2 = array_merge($personne_1, $personne_2);
+
+print_r($result_2); // Exo non réussit... A voir 
+
+
+// Exo 13
+$pays_2 = ["France", "Espagne", "Italie"]; 
+$find_country = array_search( "Espagne",$pays_2);
+print_r("Position de l'Espagne : " . $find_country);
+
+// Exo 14
+
+$utilisateur = [
+    "nom" => "toto",
+    "age" => 20,
+    "email" => "toto@gmail.com"
+];
+
+$utilisateur['age'] = 25;
+$utilisateur['ville'] = 'Syria';
+
+print_r($utilisateur);
+
+// Exo 15
+
+$lettres =  ["a", "b", "c"];
+shuffle($lettres);
+print_r($lettres); 
