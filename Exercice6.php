@@ -77,13 +77,13 @@ $nombres_2 = [1, 2, 3, 4, 5, 6];
 
 function odd($var)
 {
-    // retourne si l'entier en entrée est impair
+
     return $var & 1;
 }
 
 function even($var)
 {
-    // retourne si l'entier en entrée est pair
+
     return !($var & 1);
 }
 
@@ -97,6 +97,24 @@ array_unshift($fruits_2, "ananas");
 var_dump($fruits_2);
 
 // Exo 12
+// Ce que j'ai fait moi
+// $personne_1 = [
+//     "nom" => "Abo_Yazan",
+//     "age" => 25,
+//     "pays" => "Syrie"
+// ];
+
+// $personne_2 = [
+//     "nom" => "Al_Baze",
+//     "age" => 30,
+//     "pays" => "Syrie"
+// ];
+
+// $result_2 = array_merge($personne_1, $personne_2);
+
+// print_r($result_2); // Exo non réussit... A voir 
+
+// Exo 12
 $personne_1 = [
     "nom" => "Abo_Yazan",
     "age" => 25,
@@ -104,19 +122,33 @@ $personne_1 = [
 ];
 
 $personne_2 = [
-    "nom" => "Al_Baze",
-    "age" => 30,
+    "nom" => "Al_Baze", 
+    "age" => 30,  
     "pays" => "Syrie"
 ];
 
-$result_2 = array_merge($personne_1, $personne_2);
 
+$tmb = [];
+
+foreach ($personne_1 as $key => $value) {
+
+    if (array_key_exists($key, $personne_1)) {
+        $key .= ('ddd');
+    }
+    $tmb[$key] = $value;
+
+    $result_2 = array_merge($personne_2, $tmb);
+
+}
 print_r($result_2); // Exo non réussit... A voir 
 
 
+
+
+
 // Exo 13
-$pays_2 = ["France", "Espagne", "Italie"]; 
-$find_country = array_search( "Espagne",$pays_2);
+$pays_2 = ["France", "Espagne", "Italie"];
+$find_country = array_search("Espagne", $pays_2);
 print_r("Position de l'Espagne : " . $find_country);
 
 // Exo 14
@@ -134,6 +166,6 @@ print_r($utilisateur);
 
 // Exo 15
 
-$lettres =  ["a", "b", "c"];
+$lettres = ["a", "b", "c"];
 shuffle($lettres);
-print_r($lettres); 
+print_r($lettres);
